@@ -1,21 +1,16 @@
-pipeline 
-{
+pipeline {
     agent any
     stages{
-        stage("Testing)
-        {
-            steps
-            {
-                echo 'runnung successfully'
+    stage ('sample1'){
+        steps{
+        echo 'Building...'
+        sh 'python code.py'
             }
-        }
-        stage('Build')
-        {
-            steps{
-                echo 'building'
-                bat 'python code.py'
-            }
+    }
+    stage ('sample2'){
+        steps{
+        echo 'Using maven'
         }
     }
-    
+}
 }
